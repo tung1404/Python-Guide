@@ -111,4 +111,24 @@ def test_increment(number):
 
 ```bash
 pytest Hypothesis/test_hypotesis.py --hypothesis-show-statistics
+...
+Hypothesis/test_hypotesis.py::test_increment:
+
+  - during reuse phase (0.01 seconds):
+    - Typical runtimes: ~ 1ms, ~ 35% in data generation
+    - 1 passing examples, 0 failing examples, 0 invalid examples
+
+  - during generate phase (0.18 seconds):
+    - Typical runtimes: 0-1 ms, ~ 46% in data generation
+    - 99 passing examples, 0 failing examples, 0 invalid examples
+
+  - Stopped because settings.max_examples=100
 ```
+
+# Type Checking
+
+Runtime (or dynamic) type checkers, like Typeguard and pydantic, can help to minimize the number of tests. Let's take a look at an example of this with pydantic.
+
+# Conclusion
+
+ Your tests should also be fast, isolated/independent, and deterministic/repeatable. In the end, having confidence in your test suite will help you deploy to production more often and, more importantly, help you sleep at night.
